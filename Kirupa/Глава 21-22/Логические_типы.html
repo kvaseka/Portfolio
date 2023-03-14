@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Логические типы и строгие операторы === и !== </title>
+</head>
+
+<body>
+  <script>
+    // Создание логического типа 
+    let sunny = false;
+    let traffic = true;
+
+    // Создание логического объекта происходит с помощью ключевого слова "new", имени конструктора Boolean и начального значения
+    let boolObject = new Boolean(false);
+    let anotherBool = new Boolean(true);
+    // Используйте логические объекты только в исключительных случаях, в остальных старайтесь придерживаться примитивов.
+
+    //  Логическая функция 
+
+    // Для возвращения false вы можете передать следующие значения: 
+    let boolFalse;
+    boolFalse = Boolean(null);
+    boolFalse = Boolean(undefined);
+    boolFalse = Boolean();
+    boolFalse = Boolean(0);
+    boolFalse = Boolean("");
+    boolFalse = Boolean(false);
+
+    // Для возвращения true вы можете передать следующие значения: 
+    let boolTrue;
+    boolTrue = Boolean(true);
+    boolTrue = Boolean("Hello");
+    boolTrue = Boolean(new Boolean()); // Внедрение!!!
+    boolTrue = Boolean("false"); // "false" - это строка
+    boolTrue = Boolean({});
+    boolTrue = Boolean(3.14);
+    boolTrue = Boolean(["a", "b", "c"]);
+
+
+    //Операторы строгого равенства и неравенства
+    function theSolution(answer) {
+      if (answer == 42) {
+        console.log("You have nothing more to learn!");
+      }
+    }
+
+    theSolution("42");
+
+    /* У нас есть более строгие версии операторов равенства/неравенства, а именно === и !== соотвественно. Задача этих операторов
+        заключается в сравнении как значения, так и типа. При этом они не делают приведеня типов. Они ведут к тому, что все заботы 
+        обеспечиванию равенства или неравенства ложатся непосредственно на нас, и это хорошо.
+
+      Общее правило гласит: всегда используйте более строгие форму операторов равенства/неравенства. Помимо всего прочего, их исполь-
+        зование поможет обнаружить ошибки в коде - ошибки, которые в противном случае может быть сложно распознать.
+    */
+  </script>
+</body>
+
+</html>

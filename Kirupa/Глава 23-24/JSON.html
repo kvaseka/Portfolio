@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Все о JSON</title>
+</head>
+
+<body>
+  <script>
+    // JSON - JavaScript Object Notation
+    let exampleJSON = {
+      "firstName": "Vasilii",
+      "lastName": "Kiundiaitcev",
+      "special": {
+        "admin": true,
+        "userID": 203,
+      },
+      "devices": [
+        {
+          "type": "laptop",
+          "model": "Acer Swift 3",
+        },
+        {
+          "type": "phone",
+          "model": "Iphone 11"
+        }
+      ]
+    };
+
+    console.log(exampleJSON.firstName);
+    console.log(exampleJSON.special.userID);
+    console.log(exampleJSON.devices[0].model);
+
+
+    let devicesArray = exampleJSON.devices; // Задали масси из json в devicesArray
+
+    for (let i = 0; i < devicesArray.length; i++) {
+      let type = devicesArray[i].type;
+      let model = devicesArray[i].model;
+
+      console.log(type);
+      console.log(model);
+    }
+
+    /* 
+      Ваши данные JSON могут поступать из множества различных ресурсв, не все из которых будут возрващать их в удобном для 
+     работы формате, аналогичном томуЮ что мы только что видели. Многие буду возрващать данные JSON в виде сырого текста. В итоге
+     у вас будет что-то похожее на объект JSON, но вы не сможете взаимодействовать с данными так как это возможно при работе с 
+     реальными объектами JSON 
+      Для таких случаев существует метод JSON.parse, который получает ваши "недействительные" данные JSON в виде аргумента:
+    */
+
+    function processRequest(e) {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        let response = JSON.parse(xhr.responseText)
+        selectInitialState(response.region)
+      }
+    }
+  </script>
+</body>
+
+</html>

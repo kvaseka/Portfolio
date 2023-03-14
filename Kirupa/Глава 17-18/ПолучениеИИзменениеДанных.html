@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Методы получения и изменения данных</title>
+</head>
+
+<body>
+  <script>
+    let foo = {
+      a: "Hello",
+      b: "Burger",
+    };
+    console.log(foo.a);
+    foo.a = "Bay";
+    console.log(foo.a);
+
+    var shout =  {
+      _message: "HELLO",
+      
+      get message() {
+        return this._message
+      },
+
+      set message(value) {
+        this._message = value.toUpperCase();
+      }
+    }
+
+    shout.message = "This is sparta!";
+    console.log(shout.message);
+  </script>
+</body>
+
+</html>

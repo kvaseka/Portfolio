@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Замыканния</title>
+</head>
+
+<body>
+  <script>
+    // Возвращение с помощью return, а именно возвращение числа
+    function calculateRectangleArea(length, width) {
+      return length * width;
+    }
+
+    let roomArea = calculateRectangleArea(10, 10);
+    alert(roomArea);
+
+    // Возвращение функции
+    function stopWatch() {
+      let startTime = Date.now();
+
+      function getDelay() {
+        let elapsedTime = Date.now() - startTime;
+        alert(elapsedTime)
+      }
+
+      return getDelay;
+    }
+
+    let someThing = stopWatch();
+
+    // Сделать что-нибудь за некоторое время.
+    for (let i = 0; i < 1000000; i++) {
+      let foo = Math.random() * 10000;
+    }
+    // Вызываем возвращаемую функцию.
+    someThing();
+  </script>
+</body>
+
+</html>

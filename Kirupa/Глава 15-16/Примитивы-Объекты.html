@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Когда примитивы ведут себя как объекты</title>
+</head>
+
+<body>
+  <script>
+    let game = "Dota 2";
+    console.log("Эта игра: " + game + " самая лучшая!");
+
+    let gameObject = new String("Dota 2");
+
+    console.log(typeof game);
+    console.log(typeof game.length);
+    console.log(typeof gameObject);
+    // с помощью typeof можно понять тип данных!!!
+
+    // Регестрирование действий
+    var superSecireTerminal = {
+      allUserNames: [],
+      _username: "",
+
+      showHistore() {
+        console.log(this.allUserNames);
+      },
+
+      get username() {
+        console.log(_username);
+        return this._username;
+      },
+
+      set username(name) {
+        this._username = name;
+        this.allUserNames.push(name);
+      }
+    }
+
+    var myTerminal = Object.create(superSecireTerminal);
+
+    myTerminal.username = "Michael Gary Scott";
+    myTerminal.username = "Dwight K. Schrute";
+    myTerminal.username = "Creed Bratton";
+    myTerminal.username = "Pam Beasly";
+
+    myTerminal.showHistore();
+
+    // Проверка значения свойства
+    let person = {
+      _name: "",
+      _age: "",
+
+      get name() {
+        return this._name;
+      },
+
+      set name(value) {
+        if (value.length > 2) {
+          this._name = value;
+        } else {
+          console.log("Name is too short!");
+        }
+      },
+
+      get age() {
+        return this._age;
+      },
+
+      set age(value) {
+        if (value < 5) {
+          console.log("Too young!");
+        } else {
+          this._age = value;
+        }
+      },
+
+      get details() {
+        console.log("Name: " + this.name + ", Age: " + this.age);
+        return "Name: " + this.name + ", Age: " + this.age;
+      }
+    }
+
+    var myTerminal2 = Object.create(person);
+
+    myTerminal2.name = "Michael";
+    myTerminal2.age = 15;
+
+    myTerminal2.details;
+  </script>
+</body>
+
+</html>

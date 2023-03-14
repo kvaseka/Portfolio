@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Строки</title>
+</head>
+
+<body>
+  <script>
+    let name = "Василий";
+
+    for (let i = 0; i < name.length; i++) {
+      console.log(name[i]);
+    };
+
+    let theBigString = "Pulp fiction is an awesome movie!";
+
+    console.log(theBigString.slice(5, 12)); // fiction
+    console.log(theBigString.substr(5, 7)); // fiction
+    let theBigStringSplit = theBigString.split("i"); // Убрал i из текста Pulpf ct on s an awesome mov e!
+    console.log(theBigStringSplit[3]);
+    console.log(theBigString.toUpperCase());
+    console.log(theBigString.toLowerCase());
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Массивы</title>
+</head>
+
+<body>
+  <script>
+    // метод unshift чтобы добавить данные в начало массива
+    // для удаления можно использовать метод pop(последний элемент в массиве) и shift(первый элемент в массиве)
+
+    // Поиск элементов в массиве
+    // Есть несколько методов, а именно indexOf, lastIndexOf, includes, find, findIndex и filter
+    let groceries = ["Milk", "Eggs", "Frosted Flakes", "Salami", "Juice"];
+    let resultIndexOf = groceries.indexOf("Eggs", 3)
+
+    console.log(resultIndexOf);
+
+    let groceriesMy = ["Milk", "Eggs", "Frosted Flakes", "Salami", "Juice"];
+    let groceriesMom = ["Bear", "Tomatos", "Chees", "Pepperoni", "Sugar"];
+
+    let groceriesMyAndMom = groceriesMy.concat(groceriesMom);
+    console.log(groceriesMyAndMom);
+
+    // Консервативный способ 
+    let names = ["marge", "homer", "bart", "lisa", "maggie"];
+    let newNames = [];
+
+    for (let i = 0; i < names.length; i++) {
+      let name = names[i];
+      let firstLetter = name.charAt(0).toUpperCase();
+      newNames.push(firstLetter + name.slice(1));
+    }
+    console.log(newNames);
+
+    // map
+    let nameSimpsons = ["marge", "homer", "bart", "lisa", "maggie"];
+
+    function capitalizeItUp(item) {
+      let firstLetter = item.charAt(0).toUpperCase();
+      return firstLetter + item.slice(1);
+    }
+    let newNamesSimpsons = nameSimpsons.map(capitalizeItUp);
+    console.log(newNamesSimpsons);
+
+    // был и filter и reduce но я их не записал
+
+    // Пример рабты reduce с не с числами
+    let words = ["Where", "do", "you", "want", "to", "go", "today?"];
+
+    let phrase = words.reduce(function (total, current, index) {
+      if (index == 0) {
+        return current;
+      } else {
+        return total + " " + current;
+      }
+    }, "")
+
+    console.log(phrase);
+  </script>
+</body>
+
+</html>

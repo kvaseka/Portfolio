@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Глава 3 </title>
+</head>
+
+<body>
+  <script>
+    /*ц
+    let speed = 65;
+    let time = 3;
+    alert(speed * time);
+    */
+    // Слишком просто, и занудно выглядит, давайте воспользуемся функция чтобы облекчить задачу
+    function showDistance(speed, time) {
+      alert(speed * time);
+    }
+    showDistance(10.5, 3);
+    showDistance(30, 19);
+    showDistance(25.4, 3.4);
+    // Вот так используя функцию можно легко передавать другие значения, тем самым упрощая наш код
+
+    // Ключевое слово "RETURN"
+    function getDistance(speed, time) {
+      let distance = speed * time;
+      return distance;
+    }
+
+    let myDistance = getDistance(10, 5)
+    console.log(myDistance)
+  </script>
+</body>
+
+</html>

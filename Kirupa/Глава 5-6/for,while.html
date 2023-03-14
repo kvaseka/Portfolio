@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for,while and do - while </title>
+</head>
+
+<body>
+  <script>
+    // Цикл for позволяет повторять выполнение кода до тех пор, пока заданное нами выражение не вернет false.
+    for (let i = 0; i < 10; i++) {
+      saySomeThing();
+    }
+
+    function saySomeThing() {
+      document.writeln("Hello world!")
+    }
+
+    // Как прерывать цикл до 2 шага
+    for (let i = 0; i < 100; i++) {
+      document.writeln(i);
+
+      if (i == 45) {
+        break;
+      }
+    }
+    // Пропуск итерации 
+    let years = 18;
+
+    for (let i = 0; i < years; i++) {
+      if (i == 14) {
+        // получил паспорт 
+        continue;
+      }
+
+      document.writeln("Не совершеннолетний с возрастом: " + i);
+    }
+
+    // Не обязательно использовать числа в цикле, можно и буквы 
+    for (let i = "a"; i != "aaaaaaa"; i += "a") {
+      document.writeln("<br>hmmm, slogno <br>")
+    }
+    // Не обязательно заполнять все три секции цикла for
+    let i = 10;
+    let vasya = true;
+    for (; vasya;) {
+      if (i <= 0) {
+        vasya = false;
+      } else {
+        i--;
+        document.writeln("<br>Вася все еще крут.<br>")
+      }
+    }
+    // Цикл while 
+    let year = 22;
+
+    while (year < 100) {
+      document.writeln("<br> Мне еще нет 22!<br>");
+
+      year++;
+    }
+    // Цикл do - while 
+
+    let cout = 0;
+
+    do {
+      document.writeln("<br> I don't now, what I am doing here! <br>");
+      cout++;
+    } while (cout < 10);
+  </script>
+</body>
+
+</html>

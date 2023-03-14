@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Код для выбора случайного значения массива</title>
+</head>
+
+<body>
+  <script>
+    let myShows = ['Bones', 'Psych', 'Big Bang Theory', 'Mad Men', 'Breaking Bad', 'Modern Family', 'Game of Thrones', 'Dexter'];
+    let show = myShows[Math.floor(Math.random() * myShows.length)]; // Выбираем случайное число из массива
+
+    alert(show);
+
+    /* Пояснительная бригада "Василевц"
+    Math.floor(Math.random() * (1 + High - Low)) + Low; это у нас основная формула для выбора случайного числа из диапазона чисел
+    Крч надо понять как работает Math.random()
+    */
+  </script>
+</body>
+
+</html>

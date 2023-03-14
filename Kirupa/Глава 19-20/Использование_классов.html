@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Использование классов</title>
+</head>
+
+<body>
+  <script>
+    // Что такое класс ? мы можем рассматривать Класс как - шаблон, на который ссылаются объекты при создании.
+    // Создадим класс
+    class Planets {
+    };
+    // Создадим объект на основе класса
+    let myPlanets = new Planets();
+    /* При создании объекта с помощью "new" происходит следующеуу
+    1. Новый объект имеет тип Planet 
+    2. [[Prototype]] нашего нового объекта является новой функцией или свойством класса prototype
+    3. Выполняется функция-конструктор, которая занимается инициализацией нашего созданного объекта.
+
+    Что такое конструктор ? 
+    Конструктор - это функция (или метод), существующий внутри тела класса. Он отвечает за инициализацию создаваемых объектов, 
+    или делает  он это, выполняя содержащийся в нем код, во время самого процесса создания. Эта деталь является обязательной. Все 
+    классы должны быть оснащены функцией-конструктором. Если у вашего класса таковой не имеется (как у Planet), JavaScript 
+    автоматически создаст пустой конструктор за вас.
+    */
+
+    // Конструктор для нашего класса Planet
+    class Planet {
+      constructor(name, radius) {
+        this.name = name;
+        this.radius = radius;
+      };
+
+      getSurfaceArea() {
+        let surfaceArea = 4 * Math.PI * Math.pow(this.radius, 2)
+        console.log(surfaceArea + " square km!")
+        return surfaceArea;
+      }
+
+      set gravity(value) {
+        console.log("Setting value!");
+        this._gravity = value;
+      }
+
+      get gravity() {
+        console.log("Getting value!");
+        return this._gravity;
+      }
+    }
+    
+    // Как вызывать класс planet для создания объект.
+    let myPlanet = new Planet("Earth", 6378);
+    console.log(myPlanet.name + ",  " + myPlanet.radius)
+
+    let earth = new Planet("Earth", 6378)
+    earth.gravity = 9.81;
+    earth.getSurfaceArea();
+
+    console.log(earth.gravity);
+    // Расширение класса Plane классом PotatoPlanet с помощью ключевого слова "extends"
+  </script>
+</body>
+
+</html>

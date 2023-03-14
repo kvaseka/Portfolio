@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Числа доп</title>
+</head>
+
+<body>
+  <script>
+    // С помощью ParseInt можно легко преобразовать строку числа в число
+    let numberText = parseInt("45");
+    console.log(typeof numberText);
+    // С помощью parseFloat можно преобраовать дробное текст число в число с округление 
+    var itemOne = parseFloat("2.99");
+    var itemTwo = 4;
+    var total = 1.08 * (itemOne + itemTwo);
+
+    alert(total);
+
+    // NaN
+    parseInt("foo");
+
+    // 200
+    parseInt("200 + 400 + 300");
+
+    // 200
+    parseInt("200abc")
+
+    // NaN
+    parseInt("abc200");
+
+    // 155
+    "15" + 5;
+
+    // 3
+    "15" / 5;
+
+    // 65
+    "15" * 5;
+
+    // 4
+    parseInt("4.55");
+  </script>
+</body>
+
+</html>

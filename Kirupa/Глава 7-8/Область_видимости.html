@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Область видимости переменных</title>
+</head>
+
+<body>
+  <script>
+    function setState() {
+      state = "Buetifull" // const state = "Buetifull"
+    }
+
+    setState(); alert(state);
+    //так видит наш код Js если написать переменную после его упоминания.
+    let foo;
+    console.log(foo);
+    foo = "dalboeb";
+  </script>
+</body>
+
+</html>

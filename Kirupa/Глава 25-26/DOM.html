@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Поиск элементов в DOM</title>
+</head>
+
+<body>
+  <div id="main">
+    <div class="pictureContainer">
+      <img class="theImage" src="./IMG_0304.PNG" alt="img" height="300" width="300">
+    </div>
+    <div class="pictureContainer">
+      <img class="theImage" src="./IMG_0304.PNG" alt="img" height="300" width="300">
+    </div>
+    <div class="pictureContainer">
+      <img class="theImage" src="./IMG_0304.PNG" alt="img" height="300" width="300">
+    </div>
+    <div class="pictureContainer">
+      <img class="theImage" src="./IMG_0304.PNG" alt="img" height="300" width="300">
+    </div>
+
+  </div>
+  <script>
+    let element1 = document.querySelector("#main"); // для id = main
+    let element2 = document.querySelector(".pictureContainer"); // будет выбран первый pictureContainer, остальные будут проигнорированы
+    
+    console.log(element1);
+    console.log(element2);
+
+    let images = document.querySelectorAll(".theImage");
+    
+    for (let i = 0; i < images.length; i++) {
+      let image = images[i];
+      console.log(image.getAttribute("src"));
+    };
+    // getAttribute - позволяет вам считывать значение любого HTML-атрибута, который может иметь рассматриваемый HTML элемент.
+
+    // Если мне нужно нацелиться на все элементы img то делаем просто так: 
+    let Images = document.querySelectorAll("img");
+
+    // Если мне нужно нацелиться на только на изображения, чей атрибут src установлен как ./IMG_0304.PNG то делаем просто так:
+    let ImagesSRC = document.querySelectorAll("img[src='./IMG_0304.PNG']");
+    console.log(ImagesSRC)
+  </script>
+</body>
+
+</html>

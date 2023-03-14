@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Знакомство с объектами</title>
+</head>
+
+<body>
+  <script>
+    let funnyGuy = {}; // Объект который мы создали
+    funnyGuy.firstName = "Vasilii"; // Способ добавление в объект, свойства (например firstName)
+    let firstfunnyGuy = console.log(funnyGuy.firstName) // Vasilii
+
+    /* Другой пример добавления свойств в объект
+    funnyGuy["firstName"] = "Conan";
+    */
+
+    funnyGuy.lastName = "Kiundiaitcev"
+
+    // В объектах может находиться другие объекты, например: 
+
+    let colors = {
+      header: "blue",
+      footer: "gray",
+      content: {
+        title: "black",
+        body: "dargray",
+        signature: "light blue",
+      },
+    }
+    // Так же добавление новых свойств в объект который находиться в объекте можно реализовать так: 
+    colors.content.frame = "yellow";
+    // Либо так:
+    colors["content"]["frame"] = "yellow";
+    // Либо так: 
+    colors.content["frame"] = "yellow";
+    // Более сложные способы добавления, например Object.defineProperty and Object.defineProperties можно прочитать в MDN
+
+    // Способы удаление свойств в объектах
+    delete colors.footer;
+    delete colors["footer"];
+    // Если в коде будет слишком много delete это может замедлить сам код, есть вариант сделать так
+    colors.footer = undefined;
+    colors["footer"] = undefined;
+    // Минус этого варианта, в том что в памяти все равно останеться footer
+
+    // Вернемся к funnyGuy
+    console.log(funnyGuy.toString());
+
+  </script>
+</body>
+
+</html>

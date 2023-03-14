@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О пицце</title>
+</head>
+
+<body>
+  <script>
+    /* Типы примитивыне и объектные
+    1) string - основная структура для работы с текстом
+    2) number - позволяет работать с числами
+    3) boolean - используется там, где нужно получить true или false 
+    4) null - представляет цифровым эквивалентом ничего
+    5) undefined - похожий смысл на null. Возращается, когда значение подразумевается, но на деле отсуствует. 
+                  Например, если вы объявляете переменную, но ничего ей не присваиваете.
+    6) bigint - позволяет работать с крайне большими или малыми числами, выходящими за пределы возможнастей обычного типа number
+    7) symbol - нечто уникальное и неизменяемое, то, что при желании можно использовать как индентификатор свойств объекта
+    8) object - выступает в роли оболочки для других типов, включая другие объекты.
+    */
+
+    /* Объкты 
+    1) array - помогает хранить, извлекать и манипулировать набором данных
+    2) boolean - служит оболочкой примитива Boolean, а также работает посредством значений true и false 
+    3) date - упрощает работу с датами и их представление
+    4) function - позволяет вызывать заданный код
+    5) math - умник среди типов, расширяющий возможности работы с числами
+    6) regExp - представляет богатые возможности сопоставления текстовых шаблонов 
+    7) string - служит оболочкой примитива string
+    */
+
+    // Примеры 
+    // Массивы 
+    let names = ["Jerry", "Elaine", "George", "Kramer"];
+    let alseNames = new Array("Dennis", "Frank", "Dee", "Mac");
+
+    // Округление число 
+    let roundNumber = Math.round("-3.5");
+    console.log(roundNumber);
+
+    // Текущая дата 
+    let today = new Date();
+    console.log(today);
+
+    // объект boolean
+    let booleanObject = new Boolean(true);
+    console.log(booleanObject);
+
+    // бесконечность 
+    let unquantifiablyBigNumber = Number.POSITIVE_INFINITY;
+    console.log(unquantifiablyBigNumber);
+
+    // объекты string 
+    let hello = new String("Hello!");
+    console.log(hello);
+  </script>
+</body>
+
+</html>
