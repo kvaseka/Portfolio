@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>События</title>
+  <style>
+    .body__btn {
+      width: 300px;
+      height: 125px;
+      background-color: crimson;
+      border-radius: 14px;
+      border: 15px solid yellow;
+      color: white;
+      font-size: 36px;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="btn" class="body__btn">
+    Hello One Piece!
+  </button>
+  <script>
+    // Работа по прослушиванию нужных событий полностью обрабатывается функцией, называемой addEventListener
+    // source.addEventListener(eventName, eventHandlerm, false);
+    /* 
+    source (источник) 
+      мы вызываем addEventListener через элемент или объект, в котором мы хотим прослушивать события.
+
+    Event Name (имя события) 
+      В виде первого аргумента для функции addEventListener мы указываем имя события, которое хотим прослушивать.
+
+    */
+
+    let bodybtn = document.querySelector("#btn");
+    bodybtn.addEventListener("click", changeBackgroundColor, false);
+
+    function changeBackgroundColor(event) {
+      bodybtn.style.backgroundColor = "Blue";
+    }
+
+    bodybtn.addEventListener("mousemove", kvakva, false);
+    
+    function kvakva(event) {
+      bodybtn.style.borderRadius = "0px"
+    }
+
+    bodybtn.addEventListener("mouseout", kvakva2, false);
+    
+    function kvakva2(event) {
+      bodybtn.style.borderRadius = "12px"
+    }
+  </script>
+</body>
+
+</html>

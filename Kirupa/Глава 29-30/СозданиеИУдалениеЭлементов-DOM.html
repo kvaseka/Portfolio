@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Создание И Удаление Элементов DOM</title>
+  <style>
+    body {
+      background-color: #0E343C;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #14FFF7;
+      font-size: 72px;
+      font-family: sans-serif;
+      text-decoration: underline;
+    }
+
+    p {
+      color: #14FFF7;
+      font-size: 36px;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Am I real ?</h1>
+  <script>
+    /*
+      Есть возможность создавать HTML-элементы прямо из воздуха и добавлять их в DOM, используя всего несколько строк JavaScript.
+    Также есть возможность перемещать элементы,удалять их проделывать с ними многие другие богоподобные действия.
+    */
+
+    // Создание элементов
+    // создавать элементы можно с помощью метода createElement, например: 
+    let newElement = document.createElement("p") // Переменная newElement содержит ссылку на только что созданный элемент.
+    let bodyElement = document.querySelector("body");
+    newElement.textContent = "Or do I exist entirely in your imagination?";
+    bodyElement.appendChild(newElement); // В bodyElement засунем newElement 
+    /*
+      Написав код:
+    bodyElement.insertBefore(newElement, scriptElement) мы добавим newElement сразу после h1 затем пойдет script в иераархии DOM
+    */
+
+    // Удаление элементов 
+    bodyElement.removeChild(newElement); // Мы убили newElement, здесь самое главное это взять родитель потомка и потом удалить в нем элемент
+    bodyElement.appendChild(newElement);
+    // или удалить элемент без родителя
+    newElement.parentNode.removeChild(newElement);
+    // или самый обычный способ убийства remove()
+    bodyElement.appendChild(newElement);Ч
+    newElement.remove();
+
+    // Кланирование элементов
+    let item = document.querySelector("h1");
+    let cloneItem = item.cloneNode(true);
+    // добавление клонированного элемента в DOM
+    bodyElement.appendChild(cloneItem);
+  </script>
+</body>
+
+</html>

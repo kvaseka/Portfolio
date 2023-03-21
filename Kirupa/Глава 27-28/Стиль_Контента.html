@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Стиль контента</title>
+  <style>
+    #superman {
+      width: 300px;
+      height: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="superman">
+  </div>
+  <div id="myDiv">
+  </div>
+  <div id="myDiv2" class="superman flash batman">
+  </div>
+  <script>
+    let myElement = document.querySelector("#superman");
+    myElement.style.backgroundColor = "#D93600";
+
+    /*
+    Вынужденное изменение имен некотоых свойств CSS 
+      Чтобы указать в JS свойство CSS, содержащее тире, просто удалите это тире. Например, background-color станет backgroundColor,
+    a border-radius будет borderRadius и т.д.
+      Кроме того, некоторые слова в JS зарезервированы и не могут быть использованы как есть. Один из примеров свойств CSS, подхо-
+    дящих под эту категорию, является float. В CSS это свойство макета. В JS же оно обозначает нечто иное. Чтобы использовать свой-
+    ствоб чье име зарезервировано, используйте для него префикс css, то есть напишите не float, a cssfloat.FА
+    */
+
+    // Добавление значение классов 
+    let divElement = document.querySelector("#myDiv");
+    divElement.classList.add("bar");
+    divElement.classList.add("foo");
+    divElement.classList.add("zorb");
+    divElement.classList.add("baz");
+    
+    console.log(divElement.classList);
+
+    // Удаление значений классов
+    let divElement2 = document.querySelector("#myDiv2");
+    divElement2.classList.remove("superman");
+
+    console.log(divElement2.classList);
+
+    // Переключение значений классов 
+    divElement.classList.toggle("foo"); // удаляет foo
+    divElement.classList.toggle("foo"); // добавляет foo 
+    divElement.classList.toggle("foo"); // удаляет foo
+
+    // Проверка наличия значения класса
+    if (divElement.classList.contains("bar") == true) {
+      divElement.classList.toggle("zorb");
+      divElement.classList.toggle("baz");  
+    }
+
+    console.log(divElement.classList)
+  </script>
+</body>
+
+</html>

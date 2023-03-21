@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Обработка событий для нескольких элементов</title>
+</head>
+
+<body>
+  <div id="theDude">
+    <button id="one">1</button>
+    <button id="two">2</button>
+    <button id="three">3</button>
+    <button id="four">4</button>
+    <button id="five">5</button>
+  </div>
+
+  <script>
+    let theParent = document.querySelector("#theDude");
+    theParent.addEventListener("click", doSomething, false);
+
+    function doSomething(e) {
+      if (e.target != e.currentTarget) {
+        let clickedItem = e.target.id
+        console.log("hello " + clickedItem);
+      }
+      e.stopPropagation();
+    }
+  </script>
+</body>
+
+</html>
